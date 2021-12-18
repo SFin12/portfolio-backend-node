@@ -1,0 +1,21 @@
+Routers and endpoints needed for PE Clipboard app:
+
+Most of the data that will be retrieved will come from a firebase realtime db.  The express server will be used to connect with the users
+google drive and create and edit google sheets and it's data.
+
+
+'/gradebook'
+
+GET: get user selected gradebook's corresponding google sheet and it's id.
+POST: create new google sheet with name of the user created gradebook saved in redux store.
+DELETE: delete google sheets gradebook.
+
+'/classes'
+POST: create new tab inside current google sheet gradebook with user created class name from redux store.
+PUT: update name of previously created class tab.
+DELETE: delete class tab and all it's data.
+
+'/students'
+POST: create a column of student names with one student per row from the students array inside the StudentList object in redux.
+PUT: update column of student names with updated studentList.
+
