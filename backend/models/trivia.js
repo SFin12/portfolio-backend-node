@@ -1,64 +1,37 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
-require("mongoose-currency").loadType(mongoose);
-const Currency = mongoose.Types.Currency;
 
-const commentSchema = new Schema(
+const triviaSchema = new Schema(
     {
-        rating: {
-            type: Number,
-            min: 1,
-            max: 5,
-            required: true,
-        },
-        text: {
+        category: {
             type: String,
             required: true,
+            unique: false,
         },
-        author: {
-            type: String,
-            required: true,
-        },
-    },
-    {
-        timestamps: true,
-    }
-);
-const campsiteSchema = new Schema(
-    {
-        name: {
+        question: {
             type: String,
             required: true,
             unique: true,
         },
-        description: {
+        answer: {
             type: String,
             required: true,
         },
-        image: {
+        resource: {
             type: String,
-            required: true,
+            required: false,
         },
-        elevation: {
-            type: Number,
-            required: true,
+
+        hint: {
+            type: String,
+            require: false,
         },
-        cost: {
-            type: Currency,
-            required: true,
-            min: 0,
-        },
-        featured: {
-            type: Boolean,
-            default: false,
-        },
-        comments: [commentSchema],
     },
     {
         timestamps: true,
     }
 );
 
-const Campsite = mongoose.model("Campsite", campsiteSchema);
+const Trivia = mongoose.model("Trivia", triviaSchema);
 
-module.exports = Campsite;
+module.exports = Trivia;
