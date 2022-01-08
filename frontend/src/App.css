@@ -1,0 +1,20 @@
+body {
+    box-sizing: border-box;
+    font-size: large;
+}
+
+.flex {
+    display: flex;
+}
+
+.column {
+    flex-direction: column;
+}
+
+.center {
+    justify-content: center;
+}
+
+.title {
+    margin: 20px;
+}
