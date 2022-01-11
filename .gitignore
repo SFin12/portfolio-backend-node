@@ -3,5 +3,5 @@
 /backend/config.js
 /backend/bin/server.cert
 /backend/bin/server.key
-/frontend/.gitignore
+
 
